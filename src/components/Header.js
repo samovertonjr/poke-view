@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
 const Header = () => {
   return (
     <div>
       <img
-        style={{ width: '150px', height: '150px', marginTop: '25px' }}
-        src="https://upload.wikimedia.org/wikipedia/en/3/39/Pokeball.PNG"
+        style={{ width: "150px", height: "150px", marginTop: "25px" }}
+        src="https://pngimg.com/uploads/pokeball/pokeball_PNG8.png"
         alt="pokeball"
       />
     </div>
