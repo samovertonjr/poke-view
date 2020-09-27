@@ -4,16 +4,19 @@ const Card = ({ name, url }) => {
   const id = url.split('/')[6];
 
   return (
-    <div className="tc grow bg-white  pa3 ma2 dib bw2 shadow-3">
+    <section className="bg-white pa3 ma2 bw2 shadow-3">
+      <h2 className="w100">{name}</h2>
       <img
-        style={{ width: '175px', height: '200px' }}
+        className="db"
         alt={name}
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
       />
-      <div>
-        <h2>{name}</h2>
-      </div>
-    </div>
+
+      <ul className="list pa0">
+        <li>Height:</li>
+        <li>Weight: </li>
+      </ul>
+    </section>
   );
 };
 
