@@ -894,7 +894,7 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
-"@babel/runtime@^7.10.5", "@babel/runtime@^7.3.1":
+"@babel/runtime@^7.10.5", "@babel/runtime@^7.3.1", "@babel/runtime@^7.5.5":
   version "7.11.2"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.11.2.tgz#f549c13c754cc40b87644b9fa9f09a6a95fe0736"
   integrity sha512-TeWkU52so0mPtDcaCTxNBI/IHiz0pZgr8VEFqXFtZWpYD08ZB6FaSwVAS8MKRQAP3bYKiVjwysOJgMFY28o6Tw==
@@ -8269,6 +8269,13 @@ react-query-devtools@^2.5.1:
   integrity sha512-9d5lQFb3jrQ+8Bu53VUu7P2xJdgie9z494JPph5G04ETijGBkyYk2TVS3RGSupsRA1geXaSaAhICU+Sn2ru9tg==
   dependencies:
     match-sorter "^4.1.0"
+
+react-query@^2.23.0:
+  version "2.23.0"
+  resolved "https://registry.yarnpkg.com/react-query/-/react-query-2.23.0.tgz#9f9552a30380dfc1da2c165b5011465a78128ace"
+  integrity sha512-LHBhrr7ntstjpt85ssEaW3cGJx4BqQBFleTM3fXMO0MFzaMDQx0oxdUur+iQSOpLGPlrpToJbrjFNMQTpEExdA==
+  dependencies:
+    "@babel/runtime" "^7.5.5"
 
 react-redux@^6.0.1:
   version "6.0.1"
