@@ -1,38 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useQuery } from 'react-query';
+import { fetchios } from '../api';
 
 import CardList from './CardList';
 import SearchBox from './SearchBox';
 import Scroll from './Scroll';
 import Header from './Header';
-import { useQuery } from 'react-query';
-import { fetchios } from '../api';
 
-import '../containers/App';
-
-const MainPage = (props) => {
+const HomePage = () => {
+  const [searchText, setSearchText] = useState('');
   const { status, error, data } = useQuery('pokemon', () =>
     fetchios(`https://poke-sam.herokuapp.com/pokemon`)
   );
 
-  console.log(data);
-  const { onSearchChange, isPending } = props;
-  const filterPokemon = () => {
+  function filterPokemon() {
     return data.filter((poke) => {
-      return poke.name
-        .toLowerCase()
-        .includes(this.props.searchField.toLowerCase());
+      return poke.name.toLowerCase().includes(searchText.toLowerCase());
     });
-  };
+  }
+
+  function handleSearchChange(event) {
+    setSearchText(event.target.value);
+  }
+
+  if (status === 'loading') {
+    return <p>Loading...</p>;
+  }
+  if (status === 'error') {
+    return <p>Error :(</p>;
+  }
 
   return (
     <div className="tc">
       <Header />
-      <SearchBox searchChange={onSearchChange} />
+      <SearchBox searchChange={handleSearchChange} />
       <Scroll>
-        {isPending ? <h1>Loading</h1> : <CardList pokemon={[]} />}
+        <CardList pokemon={filterPokemon()} />
       </Scroll>
     </div>
   );
 };
 
-export default MainPage;
+export default HomePage;
